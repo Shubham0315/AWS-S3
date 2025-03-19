@@ -1,0 +1,20 @@
+{
+    "Version": "2012-10-17",
+    "Statement": [
+        {
+            "Sid": "blockallpublicaccess",
+            "Effect": "Deny",
+            "Principal": "*",
+            "Action": "s3:*",
+            "Resource": [
+                "arn:aws:s3:::aws-shubham315-s3-prod",
+                "arn:aws:s3:::aws-shubham315-s3-prod/*"
+            ],
+            "Condition": {
+                "StringNotEquals": {
+                    "aws:PrincipalArn": "\"aws:PrincipalArn\": \"arn:aws:iam::861276124894:root\""
+                }
+            }
+        }
+    ]
+}
