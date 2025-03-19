@@ -110,6 +110,9 @@ S3 Bucket Properties
 - Default encryption
 - Server access logging  :- to attach policies for using buckets/user actions restrictor in short
 - Object locking  :- once we upload object to bucket and we dont want anyone to access it/modify as it might contain sensitive information.
+- Static website hosting :- S3 is cheapest service to host static website
+- Bucket permissions :-    If organisation members have access to buckets, they can access it, read info. As devops engineer, I want to store very sensitive info of specific project. Even if people from other project have access to S3 as part of IAM policies, they can access every S3 bucket. But I want to restrict access them specifically to a specific bucket. We can do this using bucket permissions. So even if someone has misconfigured IAM rules/policies, as a bucket owner I can restrict bucket access using bucket permissions.
+
 
 ------------------------------------------------------------------------------------------
 
