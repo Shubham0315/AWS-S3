@@ -8,7 +8,7 @@ This project describes how AWS storage service S3 solves the problem of storing 
   - As most of the organizations are moving towards public cloud. The solution in public cloud is AWS S3. It is a storage service solving the storage problem
   - Simple Storage Service :- S3
  
-- S23Characteristics :-
+- S3 Characteristics :-
   - Highly scalable
   - Highly available
   - Secure
