@@ -80,7 +80,36 @@ Benefits and Advantages of S3
 
 ![image](https://github.com/user-attachments/assets/d9e31af3-6d5f-42d5-9f91-a2821403285f)
 
+- Just like GIT, there are code changes to file. If someone wants older version of file, we can provide due to GIT versioning.
+- AWS S3 is also a versioned solution. If our object is modified in local and we try to upload the same file again to S3, S3 wont allow. Here we need to enable versioning by default
+- By default it is disabled so if we try to upload a new copy, it replaces the existing like GIT
+
+
+- As we can see our bucket versioning is disabled. So we cannot upload modified file again.
+- To store multiple copies there, we can enable it by versioning
+  - Properties - Bucket versioning - Enable
+
+![image](https://github.com/user-attachments/assets/8b1e7c10-0c3f-4cfd-b523-6c968235346d)
+![image](https://github.com/user-attachments/assets/f99a724f-9482-491c-a76b-39d542b2091e)
+![image](https://github.com/user-attachments/assets/19a25f6f-05dc-4fe9-874a-2eb7e49dfa4f)
+
+  - Now when we upload a file making some changed to older one. We can check multiple files by going to :- Object - versions
+
+![image](https://github.com/user-attachments/assets/a7d72314-6123-4b0d-9066-71a892a17234)
+
 5. **Performance** :- If we create S3 in nearer region then we can quickly access its content. We can even upload huge file like 4TB without an issue. Sometimes during upload we might face issues so AWS comes up with multi-part uploads using which it uploads the files in chunks.
+
+------------------------------------------------------------------------------------------
+
+S3 Bucket Properties
+-
+- Bucket versioning
+- Tags to identify resource, created using key value concept
+  - e.g:- key - project, value - projectName
+- If someone ask us give me S3 buckets used for specific project, we can use tags. We can enforce tags in our organization for every project so that we can easily extract data.
+- Default encryption
+- Server access logging  :- to attach policies for using buckets/user actions restrictor in short
+- Object locking  :- once we upload object to bucket and we dont want anyone to access it/modify as it might contain sensitive information.
 
 ------------------------------------------------------------------------------------------
 
