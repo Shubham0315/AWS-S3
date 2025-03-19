@@ -64,3 +64,23 @@ What if the region goes down where we have created bucket? Will the data uploade
 
 ------------------------------------------------------------------------------------------
 
+Benefits and Advantages of S3
+-
+1. **Highly available and durable** :- S3 is 99.99999999999 % reliable. There is chance of only 1 object in billion getting deleted.
+2. **Highly scalable** :- S3 can store almost unlimited data in single bucket. Just one single object should not be more than 5TB size, if file is more than 5TB we need to break that file. Even here we can put multiple files of 5-5 TBs.
+3. **Good security** :- If we store database objects, applog files or any sensitive info, we can store that with encryption, ACLs, bucket policies(who can access), lock objects.
+  - Encrypt data at rest using server side encryption options provided by S3. Additionally enable encryption in transit using SSL/TLS for data transfers
+  - Enable access logging to capture detailed records of requests made to your S3 bucket. Monitor access logs and configure alerts to detect any suspicious activities or unauthorized access attempts
+4. **Cost effectiveness** :- S3 depends on storage class we select. If only for storage, we get at low cost
+  - In case of laptop, if data has to be quickly read/written, those Hard disks are costly
+  - When we want high input/output means quickyly read/written process and provide output, storage will be costlier
+  - When we have slow input/output but only storage effective storage will be of less cost
+  - There're multiple types of storage classed we can use for our S3. e.g :- S3 standard, S3 Glacier, S3 Instant Retrieval. Below are different criterias.
+  - It basically is on cost effective solution or access time solution
+
+![image](https://github.com/user-attachments/assets/d9e31af3-6d5f-42d5-9f91-a2821403285f)
+
+5. **Performance** :- If we create S3 in nearer region then we can quickly access its content. We can even upload huge file like 4TB without an issue. Sometimes during upload we might face issues so AWS comes up with multi-part uploads using which it uploads the files in chunks.
+
+------------------------------------------------------------------------------------------
+
