@@ -146,4 +146,54 @@ How do you restrict access to a specific IP or VPC using S3 policy?
 
 What is S3 Lifecycle Management?
 -
-- 
+- It helps automate movement and deletion of objects in S3 buckets based on rules we define
+- It saves time, money and manual work by auto managing storage class and retention of our data
+
+- It is set of rules that tell S3 when to transition objects to cheaper storage classes (Glacier or Intelligent Tiering) and when to delete objects we dont need
+
+- We can create rule based on object age, prefix or tag, Storage class transitions, expiration
+- To create - Bucket - Management - Create lifecycle rule - Set rule name, prefix/tag, transition rule, expiration settings
+
+--------------------------------------------------------------------------------------
+
+How does Multi-part Upload work in S3?
+-
+- This allows to upload large objects in prats, which increases efficiency, reliability and performance (for files larger than 100MB)
+- Split file into smallar parts - Upload each part independently (in parallel in needed) - Combine parts into single objects once all parts are uplaoded
+
+- Useful for unstable networks or huge files
+
+--------------------------------------------------------------------------------------
+
+What is S3 Event Notification?
+-
+- S3 Event notification automatically trigger actions/notifications when specific events occur in your S3 bucket like uploading files, deleting, modifying objects
+- S3 triggers it when something happens
+- Common Events
+  - s3:ObjectCreated:
+  - s3:ObjectRemoved:
+  - s3:ObjectRestore:
+ 
+- It can trigger SNS, SQS, Lambda
+
+- Use cases
+  - Auto resize images when users upload photo
+  - Send upload notifications to slack via SNS
+  - Trigger new data pipeline when new CSV is uploaded
+ 
+- To setup - Bucket - Properties - Event notifications - Create Event Notification - Choose Event Name - Type - Prefix/suffix, destination (SNS/SQS/Lambda)
+
+--------------------------------------------------------------------------------------
+
+How do you secure sensitive data in S3?
+-
+- Enable encryption
+  - At rest SSE S3 or SSE KMS
+  - In transit use HTTPS (SSL/TLS) to upload/download data
+ 
+- Use IAM policies
+  - Deny public access to bucket
+  - Use least privilege
+
+- Block public access settings
+  - Prevents accidental public access even if ACL or policy allows it
