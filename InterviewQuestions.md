@@ -197,3 +197,28 @@ How do you secure sensitive data in S3?
 
 - Block public access settings
   - Prevents accidental public access even if ACL or policy allows it
+ 
+- Enable Bucket versioning
+  - Protects against accidental deletions or overwrites
+  - Enable MFA delete for extra control
+ 
+--------------------------------------------------------------------------------------
+
+How do you integrate S3 with CloudFront (CDN)?
+- Cloudfront is Content Delivery Network (CDN) that caches our S3 content at edge locations worldwide. It serves content closer to user making it more faster and efficient
+
+- Create Bucket
+- Cloudfront - Create distribution - Origin domain and origin access - Viewer settings (allow HTTP) - Create
+- To secure S3 with OAC to only allow cloudfront to access our S3 content (not public)
+  - Create and select OAC - Apply cloudfront OAC policy to S3 bucket
+ 
+--------------------------------------------------------------------------------------
+
+How do you analyze S3 access logs?
+-
+- S3 Access logs helps you monitor who accessed data, from where and how which is essential for security audits, usage tracking and troubleshooting
+- S3 Access logs provide detailed records about requests made to S3 bucket
+
+- **Enable S3 Access logging** :- Bucket - Properties - Server access logging - Enable target bucket where to store logs
+- **Analyse the logs** :- Download log files from bucket. Use grep,awk
+- **Use third party tools** :- Cloudwatch, datadog, splunk
