@@ -205,6 +205,7 @@ How do you secure sensitive data in S3?
 --------------------------------------------------------------------------------------
 
 How do you integrate S3 with CloudFront (CDN)?
+-
 - Cloudfront is Content Delivery Network (CDN) that caches our S3 content at edge locations worldwide. It serves content closer to user making it more faster and efficient
 
 - Create Bucket
