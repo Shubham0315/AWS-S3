@@ -234,3 +234,39 @@ Explain the eventual consistency model of S3.
 
 --------------------------------------------------------------------------------------
 
+How do you configure S3 Cross-Region Replication (CRR) or Same-Region Replication (SRR)?
+-
+- Enable versioning - Replication works only if versioning is enabled in both source and destination buckets
+- Create or identify destination bucket and ensure it has proper permissions
+- Create replication role allowing S3 to replicate objects from source to destination
+- Configure replication rules. Specify objects to replicate
+
+--------------------------------------------------------------------------------------
+
+How do you host a static website on S3?
+-
+- Create S3, enable static website hosting providing index document and error document
+- Upload website files
+- Set bucket policy/permissions to make objects publically readable
+- Use S3 website endpoint provided in console
+
+--------------------------------------------------------------------------------------
+
+How do you integrate S3 with CI/CD pipelines for artifact storage or deployment?
+-
+- Configure jenkins to upload build artifact to S3 after build
+- Use S3 as source for deployments. For EC2 download artifact from S3 during deployment scripts
+- Use S3 as source stage and trigger downstream deploy stages manually
+- Enale versioning on S3 buckets to support artifact rollback
+
+--------------------------------------------------------------------------------------
+
+How do you prevent accidental deletion of critical S3 data?
+-
+- Enable versioning
+- Use MFA delete so it requires MFA for delete operations
+- Restrict policies to authorized users only
+- Monitoring and alerts on delete operations
+
+--------------------------------------------------------------------------------------
+
