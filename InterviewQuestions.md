@@ -223,3 +223,14 @@ How do you analyze S3 access logs?
 - **Enable S3 Access logging** :- Bucket - Properties - Server access logging - Enable target bucket where to store logs
 - **Analyse the logs** :- Download log files from bucket. Use grep,awk
 - **Use third party tools** :- Cloudwatch, datadog, splunk
+
+--------------------------------------------------------------------------------------
+
+Explain the eventual consistency model of S3.
+-
+- S3 provides eventual consistency for overwrite PUTs and DELETEs.
+- Even if we update or delete any object, it will take some time for all read requests to reflect the change.
+- All copies of object across S3 will comverge to latest version
+
+--------------------------------------------------------------------------------------
+
